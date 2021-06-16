@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rail : MonoBehaviour
+public class MainRail : MonoBehaviour
 {
     [SerializeField] private GameObject groupRailPrefab;
     [SerializeField] private GameObject[] groupRails;

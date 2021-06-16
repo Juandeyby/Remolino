@@ -11435,7 +11435,7 @@ GameObject:
   - component: {fileID: 692097757}
   - component: {fileID: 692097758}
   m_Layer: 0
-  m_Name: Rail
+  m_Name: MainRail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34317,6 +34317,8 @@ GameObject:
   - component: {fileID: 6392505255080776931}
   - component: {fileID: 7869260975510250098}
   - component: {fileID: 7869260975510250097}
+  - component: {fileID: 7869260975510250100}
+  - component: {fileID: 7869260975510250099}
   m_Layer: 0
   m_Name: HoloCamera
   m_TagString: Untagged
@@ -34356,6 +34358,37 @@ MonoBehaviour:
   points: 0
   timerIsRunning: 0
   loading: 0
+--- !u!114 &7869260975510250099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869260975510250096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e10d4587c2338b448c3adfa96d0e56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fragmentIds:
+  - A
+  - B
+  _fragmentFactory: {fileID: 7869260975510250100}
+--- !u!114 &7869260975510250100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869260975510250096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf39d9a95682f84a90022d73f1a2e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fragments:
+  - {fileID: 2429375751230024521, guid: 66424f359bbf3f9439115604b8d78ecf, type: 3}
+  - {fileID: 3588174048003868431, guid: 83dee96f62355664bb97ffab400d8171, type: 3}
 --- !u!4 &7869260975510250101
 Transform:
   m_ObjectHideFlags: 0
