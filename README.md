@@ -1,7 +1,7 @@
 # RemolinoAR
-Made with Unity and Holo-SDK for #Holohackathon
+Made with Unity and Holo-SDK for #HoloHackathon
 
-Watch video [Youtube](https://youtu.be/wyTxPsu_WEk)
+Watch video [Youtube](https://youtu.be/3IIYz6YSiOk)
 
 Play and try to do a lot of points.
 Just don't try to fall.
