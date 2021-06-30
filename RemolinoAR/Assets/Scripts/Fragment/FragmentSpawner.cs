@@ -14,9 +14,9 @@ public class FragmentSpawner : MonoBehaviour
         _fragmentTypeSelector = new FragmentTypeSelector(_fragmentIds);
     }
 
-    private void SpawnRandomEnemy()
+    public Fragment SpawnRandomEnemy(Transform parent)
     {
         var fragmentTypeToSpawn = _fragmentTypeSelector.Select();
-        _fragmentFactory.Create(fragmentTypeToSpawn);
+        return _fragmentFactory.Create(fragmentTypeToSpawn, parent);
     }
 }

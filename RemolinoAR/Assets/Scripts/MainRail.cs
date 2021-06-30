@@ -8,10 +8,11 @@ public class MainRail : MonoBehaviour
     [SerializeField] private GameObject[] groupRails;
     private float _speedUp = 30f;
     private float _speedRotation = 1.5f;
+    private FragmentSpawner _fragmentSpawner;
 
     private void Start()
     {
-
+        _fragmentSpawner = FindObjectOfType<FragmentSpawner>();
     }
 
     void Update()
@@ -38,11 +39,13 @@ public class MainRail : MonoBehaviour
     {
         for (int i = 0; i < groupRails.Length; i++)
         {
-            if (groupRails[i].transform.localPosition.y >= 15f)
+            if (groupRails[i].transform.localPosition.y >= 25f && groupRails[i].transform)
             {
-                Destroy(groupRails[i]);
-                groupRails[i] = Instantiate(groupRailPrefab, transform);
+                var fragment = _fragmentSpawner.SpawnRandomEnemy(groupRails[i].transform);
+                fragment.transform.localPosition = Vector3.zero;
+                fragment.transform.localRotation = Quaternion.identity;
                 groupRails[i].transform.localPosition = Vector3.down * 15f;
+                Destroy(groupRails[i].transform.GetChild(0).gameObject);
             }
         }        
     }

@@ -16,12 +16,12 @@ public class FragmentFactory : MonoBehaviour
         }
     }
 
-    public Fragment Create(string fragmentId)
+    public Fragment Create(string fragmentId, Transform parent)
     {
         if (!_idToFragments.TryGetValue(fragmentId, out var fragmentToSpawn))
         {
             throw new ArgumentOutOfRangeException();
         }
-        return Instantiate(fragmentToSpawn);
+        return Instantiate(fragmentToSpawn, parent);
     }
 }

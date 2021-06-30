@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool timerIsRunning;
     [SerializeField] public bool loading;
 
+    [Header("Audio")]
+    [SerializeField] public AudioClip audioAddPoint;
+    [SerializeField] public AudioClip audioDelPoint;
+    [SerializeField] public AudioSource audioSourcePoint;
+
     private void Start()
     {
         _gameOver = FindObjectOfType<GameOver>();
@@ -38,6 +43,17 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+    }
+
+    public void AddPoints(int points)
+    {
+        this.points += points;
+        RefreshPointsGUI(this.points);
+    }
+
+    private void RefreshPointsGUI(float points)
+    {
+        pointsGUI.text = "Points: " + points;
     }
 
     private void RefreshTimeGUI(float timer)
@@ -88,5 +104,14 @@ public class GameManager : MonoBehaviour
         float seconds = Mathf.FloorToInt(timer % 60);
         var timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
         return timerString;
+    }
+
+    public void PlayPoints(bool isPositive)
+    {
+        if (isPositive)
+            audioSourcePoint.clip = audioAddPoint;
+        else
+            audioSourcePoint.clip = audioDelPoint;
+        audioSourcePoint.Play();
     }
 }
